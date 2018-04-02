@@ -1,33 +1,21 @@
 ﻿
-<h1>Hello {{ Name }}</h1>
-
+<h1> {{ Title }}</h1>
+<hr />
 <div>
-    <label>Write something </label>
-    <input type="text" ng-model="handle" />
-    <input type="button" ng-click="OnClickEvent(this,handle)" value="Click me please" />
+    <input type="button" ng-click="GetRatesClickEvent(this)" value={{Button1}} />
 </div>
-
 <hr />
-
-<div class="alert"
-     ng-if="handle.length < NUM_CHAR"
-     ng-class="{ 'alert-danger': handle.length < NUM_CHAR - 2, 'alert-warning': handle.length >= NUM_CHAR - 2 && handle.length < NUM_CHAR }">
-    Must have more than {{ NUM_CHAR }} characters !
+<div>
+    <input type="button" ng-click="GetTransClickEvent(this)" value={{Button2}} />
 </div>
-
 <hr />
-
-<h3>Rules</h3>
-<ul>
-    <li ng-repeat="rule in rules">
-        {{ rule.Id }}. {{ rule.Title }}
-    </li>
-</ul>
-
-<hr />
-
-<label>Rubén is writing: {{ handle }}</label>
-<br />
-<label>The system is translating: {{ translation() }}</label>
-<br />
-<label>Watching Rubén: {{ handle2 }}</label>
+<div>
+    <div class="alert"
+         ng-if="skuValue.length < NUM_CHAR"
+         ng-class="{ 'alert-danger': skuValue.length != NUM_CHAR }">
+        {{ SKUAlert }}
+    </div>
+    <label>{{ SKULabel }}</label>
+    <input type="text" ng-model="skuValue" />
+    <input type="button" ng-click="GetTransSumClickEvent(this,skuValue)" value={{Button3}} />
+</div>

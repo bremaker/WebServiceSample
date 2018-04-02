@@ -4,94 +4,48 @@ myApp.config(function ($routeProvider) {
 
     $routeProvider
 
-    .when('/', {
-        templateUrl: 'pages/homePage.html',
-        controller: 'mainController'
-    })
-
-    .when('/second', {
-        templateUrl: 'pages/secondPage.html',
-        controller: 'secondController'
-    })
-
-    .when('/second/:num', {
-        templateUrl: 'pages/secondPage.html',
-        controller: 'secondController'
-    })
+        .when('/', {
+            templateUrl: 'pages/homePage.html',
+            controller: 'mainController'
+        })
 
 });
 
-myApp.service('nameService', function ()
+myApp.controller('mainController', ['$scope', '$log', '$timeout', '$filter', '$http', '$location',
+    function (Scope, Log, Timer, Filter, Http, Location)
 {
-    this.text = "This is a service !!!!!";
-});
-
-myApp.controller('mainController', ['$scope', '$log', '$timeout','$filter','$http','$location','nameService', function (Scope, Log, Timer, Filter, Http, Location, Service)
-{
+    // VALUES
     Scope.NUM_CHAR = 5;
-    Scope.handle = "";
-    Scope.handle2 = "Doing nothing";
-    Scope.URI_BASE = 'api/products'
-    Scope.timer = null;
+    Scope.URI_BASE = 'api/products';
+    // END VALUES
 
-    // Sample 1
-    Scope.Name = "Rub\u00E9n";
-    Timer
-    (
-        function ()
-        {
-            Scope.Name = 'RUBEN!!!!';
-            Log.warn("It's time !!!!");
-        },
-        5000
-    );
+    // TEXTS
+    Scope.Title = "Gloiath National Bank Services";
+    Scope.Button1 = "Get all Rates";
+    Scope.Button2 = "Get all transactions";
+    Scope.Button3 = "Get transactions sum";
+    Scope.SKUAlert = "The SKU id must have " + Scope.NUM_CHAR + " characters !";
+    Scope.SKULabel = "Type a valid SKU: ";
+    // TEXTS END
 
-    // Sample 2
-    Scope.translation = function ()
+    // VAR
+    Scope.skuValue = "";
+    // END VAR
+
+    // EVENTS
+    Scope.GetRatesClickEvent = function(context)
     {
-        return Filter('lowercase')(Scope.handle);
+        alert("Clicked: GetRatesClickEvent");
     }
 
-    // Sample 3
-    Scope.rules =
-    [
-        { Id: 1, Title: 'Must have more than ' + Scope.NUM_CHAR + ' characters' },
-        { Id: 2, Title: 'Must say something with sense' },
-        { Id: 3, Title: 'Must be cool' }
-    ]
-
-    // Sample 4
-    Scope.OnClickEvent = function(context, text)
+    Scope.GetTransClickEvent = function (context)
     {
-        context.Name = "Rub\u00E9n Brea";
-        alert("Clicked: " + text);
+        alert("Clicked: GetTransClickEvent");
     }
 
-    // Sample 5: appSecond.js 
-
-    // Sample 6
-    Log.info(Location.path());
-
-    // Sample 7
-    Log.debug(Service.text);
-
-    // Sample 8
-    Scope.$watch('handle', function()
+    Scope.GetTransSumClickEvent = function (context, value)
     {
-        Scope.handle2 = 'Typing';
-
-        if (Scope.timer !== null)
-        {
-            Timer.cancel(Scope.timer);
-        }
-
-        Scope.timer = Timer
-        (
-            function ()
-            {
-                Scope.handle2 = "Doing nothing";
-            },
-            1000
-        );
-    });
+        alert("Clicked: GetTransSumClickEvent: " + value);
+    }
+    // EVENTS END
 }]);

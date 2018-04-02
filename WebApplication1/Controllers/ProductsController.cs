@@ -13,7 +13,29 @@ namespace ProductsApp.Controllers
     {
         static ProductManager products = new ProductManager(10);
 
+        private const string RATES_SOURCE = "http://quiet-stone-2094.herokuapp.com/rates.json";
+        private const string TRANS_SOURCE = "http://quiet-stone-2094.herokuapp.com/transactions.json";
+
         #region GET
+
+        [HttpGet]
+        public IEnumerable<Product> GetAllRates()
+        {
+            SourceManager manager = new SourceManager(RATES_SOURCE, "rates.txt");
+            return products.GetAll();
+        }
+
+        [HttpGet]
+        public IEnumerable<Product> GetAllTransactions()
+        {
+            return products.GetAll();
+        }
+
+        [HttpGet]
+        public IEnumerable<Product> GetTransactionsSum(string skuId)
+        {
+            return products.GetAll();
+        }
 
         [HttpGet]
         public IEnumerable<Product> GetAllProducts()
@@ -45,46 +67,6 @@ namespace ProductsApp.Controllers
             {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
                 //return new ExceptionResult(e, this);
-            }
-        }
-
-        #endregion
-
-        #region DELETE
-
-        [HttpDelete]
-        public IHttpActionResult DeleteProduct(int id)
-        {
-            try
-            {
-                if (!products.DeleteProduct(id))
-                {
-                    return NotFound();
-                }
-
-                return Ok(id);
-            }
-            catch (Exception e)
-            {
-                throw new HttpResponseException(HttpStatusCode.InternalServerError);
-            }
-        }
-
-        #endregion
-
-        #region POST
-
-        [HttpPost]
-        public IHttpActionResult AddProduct(Product request)
-        {
-            try
-            {
-                products.AddProduct(request);
-                return Ok(products.GetAll());
-            }
-            catch (Exception e)
-            {
-                throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
         }
 
