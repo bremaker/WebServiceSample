@@ -16,7 +16,7 @@ myApp.controller('mainController', ['$scope', '$log', '$timeout', '$filter', '$h
 {
     // VALUES
     Scope.NUM_CHAR = 5;
-    Scope.URI_BASE = 'api/products';
+    Scope.URI_BASE = 'api/rates';
     // END VALUES
 
     // TEXTS
@@ -36,6 +36,12 @@ myApp.controller('mainController', ['$scope', '$log', '$timeout', '$filter', '$h
     Scope.GetRatesClickEvent = function(context)
     {
         alert("Clicked: GetRatesClickEvent");
+
+        Http.get(Scope.URI_BASE)
+            .success(function (data) {
+            })
+            .error(function (data, status) {
+            });
     }
 
     Scope.GetTransClickEvent = function (context)
