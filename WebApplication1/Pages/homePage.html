@@ -3,10 +3,14 @@
 <hr />
 <div>
     <input type="button" ng-click="GetRatesClickEvent(this)" value={{Button1}} />
+    <br />
+    <label>{{rateValue}}</label>
 </div>
 <hr />
 <div>
     <input type="button" ng-click="GetTransClickEvent(this)" value={{Button2}} />
+    <br />
+    <label>{{transValue}}</label>
 </div>
 <hr />
 <div>
@@ -18,4 +22,6 @@
     <label>{{ SKULabel }}</label>
     <input type="text" ng-model="skuValue" />
     <input type="button" ng-click="GetTransSumClickEvent(this,skuValue)" value={{Button3}} />
+    <br />
+    <label>Result = {{ skuResult }}</label>
 </div>

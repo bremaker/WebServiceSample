@@ -110,7 +110,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Directives\addDish.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Pages\homePage.html" />
@@ -122,13 +121,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Contracts\IResultsFactory.cs" />
+    <Compile Include="Contracts\ISource.cs" />
+    <Compile Include="Controllers\TransController.cs" />
     <Compile Include="Controllers\RatesController.cs" />
+    <Compile Include="Entities\Transaction.cs" />
+    <Compile Include="Factories\Singleton.cs" />
+    <Compile Include="Factories\ResultsFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Managers\SourceManager.cs" />
-    <Compile Include="Models\Rates.cs" />
+    <Compile Include="Sources\DataSource.cs" />
+    <Compile Include="Entities\Rate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\TransRepo.cs" />
+    <Compile Include="Repositories\RatesRepo.cs" />
+    <Compile Include="Repositories\BasicRepo.cs" />
+    <Compile Include="Contracts\IBasicRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

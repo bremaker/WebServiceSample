@@ -1,42 +1,28 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Results;
-using WebApplication1.Models;
+using WebApplication1.Contracts;
+using WebApplication1.Entities;
+using WebApplication1.Repositories;
+using WebApplication1.Sources;
 
 namespace ProductsApp.Controllers
 {
     public class RatesController : ApiController
     {
-        private const string RATES_SOURCE = "http://quiet-stone-2094.herokuapp.com/rates.json";
-        private const string TRANS_SOURCE = "http://quiet-stone-2094.herokuapp.com/transactions.json";
-
         #region GET
 
         [HttpGet]
-        public IEnumerable<Rates> GetAllRates()
+        public IEnumerable<Rate> GetAllRates()
         {
-            List<Rates> rates = new List<Rates>();
-            // SourceManager manager = new SourceManager(RATES_SOURCE, "rates.txt");
-            Console.WriteLine("RATES");
+            string data;
+            IList<Rate> rates;
+
+            data = Singleton.Factory.GetRates();
+            rates = JsonConvert.DeserializeObject<List<Rate>>(data);
 
             return rates;
         }
-
-        //[HttpGet]
-        //public IEnumerable<Product> GetAllTransactions()
-        //{
-        //    return products.GetAll();
-        //}
-
-        //[HttpGet]
-        //public IEnumerable<Product> GetTransactionsSum(string skuId)
-        //{
-        //    return products.GetAll();
-        //}
 
         #endregion
 
