@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using WebApplication1.Contracts;
+using WebApplication.Contracts;
+using WebApplication.Utils;
 
-namespace WebApplication1.Repositories
+namespace WebApplication.Repositories
 {
+    /// <summary>
+    /// Implements persistence
+    /// </summary>
     public abstract class BasicRepo : IBasicRepo
     {
         protected const string DATA_SOURCE = "~/Data/";
+        protected const string ERROR_TEXT = "No data to read in ";
+
         protected readonly string _path;
         protected readonly string _fileName;
 
@@ -31,8 +37,9 @@ namespace WebApplication1.Repositories
             }
             catch(Exception e)
             {
-                System.Diagnostics.Debug.WriteLine(e.Message);
+                Log.Write(e.Message);
                 result = false;
+                throw e;
             }
 
             return result;
@@ -41,6 +48,7 @@ namespace WebApplication1.Repositories
         public string ReadData()
         {
             string result = "";
+            string error = "";
             string fullPath = _path + _fileName;
 
             try
@@ -49,10 +57,17 @@ namespace WebApplication1.Repositories
                 {
                     result = File.ReadAllText(fullPath);
                 }
+                else
+                {
+                    error = ERROR_TEXT + fullPath;
+                    Log.Write(error);
+                    throw new Exception(error);
+                }
             }
             catch(Exception e)
             {
-                System.Diagnostics.Debug.WriteLine(e.Message);
+                Log.Write(e.Message);
+                throw e;
             }
 
             return result;

@@ -112,32 +112,34 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
-    <Content Include="Pages\homePage.html" />
+    <Content Include="Client\Pages\homePage.html" />
     <Content Include="reamde.txt" />
-    <Content Include="scripts\ai.0.15.0-build58334.js" />
-    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="scripts\app.js" />
+    <Content Include="Client\Scripts\ai.0.15.0-build58334.js" />
+    <Content Include="Client\Scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="Client\Scripts\app.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Contracts\IResultsFactory.cs" />
-    <Compile Include="Contracts\ISource.cs" />
-    <Compile Include="Controllers\TransController.cs" />
-    <Compile Include="Controllers\RatesController.cs" />
-    <Compile Include="Entities\Transaction.cs" />
-    <Compile Include="Factories\Singleton.cs" />
-    <Compile Include="Factories\ResultsFactory.cs" />
+    <Compile Include="Server\Contracts\IResultsFactory.cs" />
+    <Compile Include="Server\Contracts\ISource.cs" />
+    <Compile Include="Server\Controllers\TransController.cs" />
+    <Compile Include="Server\Controllers\RatesController.cs" />
+    <Compile Include="Server\Entities\TransactionSum.cs" />
+    <Compile Include="Server\Entities\Transaction.cs" />
+    <Compile Include="Server\Install.cs" />
+    <Compile Include="Server\Factories\ResultsFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Sources\DataSource.cs" />
-    <Compile Include="Entities\Rate.cs" />
+    <Compile Include="Server\Sources\DataSource.cs" />
+    <Compile Include="Server\Entities\Rate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\TransRepo.cs" />
-    <Compile Include="Repositories\RatesRepo.cs" />
-    <Compile Include="Repositories\BasicRepo.cs" />
-    <Compile Include="Contracts\IBasicRepo.cs" />
+    <Compile Include="Server\Repositories\TransRepo.cs" />
+    <Compile Include="Server\Repositories\RatesRepo.cs" />
+    <Compile Include="Server\Repositories\BasicRepo.cs" />
+    <Compile Include="Server\Contracts\IBasicRepo.cs" />
+    <Compile Include="Server\Utils\Log.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

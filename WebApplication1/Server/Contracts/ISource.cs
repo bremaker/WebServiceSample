@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WebApplication1.Contracts
+namespace WebApplication.Contracts
 {
     public interface ISource
     {

@@ -1,0 +1,39 @@
+[0:00] GetAllTransactions
+[0:01] Error en el servidor remoto: (404) No se encontró.
+[0:02] GetAllTransactions
+[0:02] Error en el servidor remoto: (404) No se encontró.
+[0:02] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:02] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:02] GetAllTransactions
+[0:02] Error en el servidor remoto: (404) No se encontró.
+[0:02] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:02] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:05] GetAllTransactions
+[0:05] Error en el servidor remoto: (404) No se encontró.
+[0:05] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:05] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:06] GetAllTransactions
+[0:06] Error en el servidor remoto: (404) No se encontró.
+[0:06] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:06] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:10] GetAllRates
+[0:10] GetAllTransactions
+[0:10] Error en el servidor remoto: (404) No se encontró.
+[0:10] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:10] No data to read in E:\Repositorio\WebServiceSample\WebApplication1\Data\trans.txt
+[0:27] GetAllRates
+[0:27] GetAllTransactions
+[0:27] GetTransactionsSum: P7462
+[0:27] GetAllTransactions
+[0:27] GetAllRates
+[0:28] GetTransactionsSum: aaaaa
+[0:28] GetAllTransactions
+[0:28] GetAllRates
+[0:31] GetAllRates
+[0:32] GetAllRates
+[0:33] GetAllRates
+[0:34] GetAllTransactions
+[0:34] GetTransactionsSum: Q7645
+[0:34] GetAllTransactions
+[0:34] GetAllRates
+[0:38] GetAllRates

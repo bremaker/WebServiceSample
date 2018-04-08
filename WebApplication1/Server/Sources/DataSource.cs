@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Net;
-using WebApplication1.Contracts;
+using WebApplication.Contracts;
+using WebApplication.Utils;
 
-namespace WebApplication1.Sources
+namespace WebApplication.Sources
 {
     public class DataSource : ISource
     {
@@ -21,7 +22,7 @@ namespace WebApplication1.Sources
             }
             catch(Exception e)
             {
-                System.Diagnostics.Debug.WriteLine(e.Message);
+                Log.Write(e.Message);
             }
 
             return result;

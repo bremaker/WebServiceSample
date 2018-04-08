@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace WebApplication1.Repositories
+namespace WebApplication.Repositories
 {
+    /// <summary>
+    /// Implements transaction persistence
+    /// </summary>
     public class TransRepo : BasicRepo
     {
         private const string REPOSITORY_NAME = "trans.txt";
