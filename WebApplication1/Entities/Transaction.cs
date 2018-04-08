@@ -9,7 +9,7 @@ namespace WebApplication1.Entities
    public class Transaction
     {
         public string sku;
-        public double amount;
+        public decimal amount;
         public string currency;
     }
 }

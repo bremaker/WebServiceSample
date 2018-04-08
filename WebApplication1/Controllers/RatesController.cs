@@ -15,13 +15,7 @@ namespace ProductsApp.Controllers
         [HttpGet]
         public IEnumerable<Rate> GetAllRates()
         {
-            string data;
-            IList<Rate> rates;
-
-            data = Singleton.Factory.GetRates();
-            rates = JsonConvert.DeserializeObject<List<Rate>>(data);
-
-            return rates;
+            return Singleton.Factory.GetRates();
         }
 
         #endregion

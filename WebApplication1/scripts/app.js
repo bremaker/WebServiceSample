@@ -59,7 +59,7 @@ myApp.controller('mainController', ['$scope', '$log', '$timeout', '$filter', '$h
 
     Scope.GetTransSumClickEvent = function (context, value)
     {
-        if (Scope.skuValue.length >= Scope.NUM_CHAR)
+        if (Scope.skuValue.length == Scope.NUM_CHAR)
         {
             Http.get(Scope.URI_TRANS + "?skuId=" + Scope.skuValue)
                 .success(function (data) {

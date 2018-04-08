@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using WebApplication1.Entities;
 
 namespace WebApplication1.Contracts
 {
     public interface IResultsFactory
     {
-        string GetRates();
+        List<Rate> GetRates();
 
-        string GetTransactions();
+        List<Transaction> GetTransactions();
 
-        double GetTransSum(string skuId);
+        decimal GetTransSum(string skuId);
     }
 }

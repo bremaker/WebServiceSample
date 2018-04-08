@@ -15,17 +15,11 @@ namespace ProductsApp.Controllers
         [HttpGet]
         public IEnumerable<Transaction> GetAllTransactions()
         {
-            string data;
-            IList<Transaction> transactions;
-
-            data = Singleton.Factory.GetTransactions();
-            transactions = JsonConvert.DeserializeObject<List<Transaction>>(data);
-
-            return transactions;
+            return Singleton.Factory.GetTransactions();
         }
 
         [HttpGet]
-        public double GetTransactionsSum(string skuId)
+        public decimal GetTransactionsSum(string skuId)
         {
             return Singleton.Factory.GetTransSum(skuId);
         }

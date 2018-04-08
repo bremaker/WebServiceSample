@@ -14,11 +14,7 @@
 </div>
 <hr />
 <div>
-    <div class="alert"
-         ng-if="skuValue.length < NUM_CHAR"
-         ng-class="{ 'alert-danger': skuValue.length != NUM_CHAR }">
-        {{ SKUAlert }}
-    </div>
+    <div class="alert alert-danger" ng-if="skuValue.length != NUM_CHAR"> {{ SKUAlert }} </div>
     <label>{{ SKULabel }}</label>
     <input type="text" ng-model="skuValue" />
     <input type="button" ng-click="GetTransSumClickEvent(this,skuValue)" value={{Button3}} />

@@ -41,12 +41,13 @@ namespace WebApplication1.Repositories
         public string ReadData()
         {
             string result = "";
+            string fullPath = _path + _fileName;
 
             try
             {
-                if (File.Exists(_path))
+                if (File.Exists(fullPath))
                 {
-                    result = File.ReadAllText(_path);
+                    result = File.ReadAllText(fullPath);
                 }
             }
             catch(Exception e)

@@ -10,6 +10,6 @@ namespace WebApplication1.Entities
     {
         public string from;
         public string to;
-        public double rate;
+        public decimal rate;
     }
 }
